@@ -40,13 +40,15 @@ function render(variables = {}) {
   const instagramUser =
     variables.instagram == null ? "4geeksacademy" : variables.instagram;
   const socialMediaPosition = variables.socialMediaPosition || "position-right";
+  const city = variables.city == null ? "city" : variables.city;
+  const country = variables.country == null ? "country" : variables.country;
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${fullName}</h1>
           <h2>${variables.role == null ? "Your role" : variables.role}</h2>
-          <h3>Miami, USA</h3>
+          <h3>${city}, ${country}</h3>
           <ul class="${socialMediaPosition}">
             <li><a href="https://twitter.com/${twitterUser}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${githubUser}"><i class="fab fa-github"></i></a></li>
